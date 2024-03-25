@@ -1,6 +1,25 @@
 body
 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header 
+{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main 
+{
+    flex-grow: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0px 16px 0px;
 }
 
 #container
@@ -17,8 +36,25 @@ body
 
 .unit
 {
-    height: 80px;
-    width: 80px;
+    min-height: 101px;
+    min-width: 101px;
     border: 1px solid black;
     background-color: #E5E7EB;
+}
+
+footer 
+{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(119, 119, 184);
+    color: aliceblue;
+    padding: 16px 0px 16px 0px;
+}
+
+a 
+{
+    color: rgb(223, 176, 165);
 }
