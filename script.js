@@ -1,5 +1,6 @@
 const container = document.querySelector('#container');
 const sizeBtn = document.querySelector('#size');
+const resetBtn = document.querySelector('#reset');
 let initialSize = 16;
 
 createGrid(initialSize);
@@ -10,9 +11,18 @@ sizeBtn.addEventListener('click', () => {
     {
         size = prompt("Maximum allowed size is 100.\nKindly input a valid grid size.");
     }
+    if (size == null || size == "")
+    {
+        size = 16;
+    }
     deleteGrid(initialSize);
     createGrid(size);
     initialSize = size;
+});
+
+resetBtn.addEventListener('click', () => {
+    deleteGrid(initialSize);
+    createGrid(initialSize);
 });
 
 function createGrid(size)
