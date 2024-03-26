@@ -13,3 +13,10 @@ for (let i=0; i<16; i++)
         rowDiv.appendChild(colDiv);
     }
 }
+
+container.addEventListener('mouseover', (e) => {
+    if (e.target.getAttribute('class') == 'unit')
+    {
+        e.target.style.backgroundColor = 'blue';
+    }
+});
