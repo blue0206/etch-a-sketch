@@ -54,6 +54,16 @@ function deleteGrid(size)
 container.addEventListener('mouseover', (e) => {
     if (e.target.getAttribute('class') == 'unit')
     {
-        e.target.style.backgroundColor = 'blue';
+        e.target.style.backgroundColor = generateColor();
     }
 });
+
+function generateColor()
+{
+    return `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
+}
+
+function randomRGB()
+{
+    return Math.floor(Math.random()*255);
+}
