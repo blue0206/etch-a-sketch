@@ -50,12 +50,23 @@ function deleteGrid(size)
     }
 }
 
-
-container.addEventListener('mouseover', (e) => {
-    if (e.target.getAttribute('class') == 'unit')
+let click = false;
+container.addEventListener('click', (e) => {
+    if (click)
     {
-        e.target.style.backgroundColor = generateColor();
+        click = false;
     }
+    else
+    {
+        click = true;
+    }
+
+    container.addEventListener('mouseover', (e) => {
+        if (e.target.getAttribute('class') == 'unit' && click)
+        {
+            e.target.style.backgroundColor = generateColor();
+        }
+    });
 });
 
 function generateColor()
