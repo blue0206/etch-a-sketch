@@ -37,6 +37,7 @@ function createGrid(size)
         {
             let colDiv = document.createElement('div');
             colDiv.setAttribute('class', 'unit');
+            colDiv.setAttribute('value', '1');
             rowDiv.appendChild(colDiv);
         }
     }
@@ -65,6 +66,7 @@ container.addEventListener('click', (e) => {
         if (e.target.getAttribute('class') == 'unit' && click)
         {
             e.target.style.backgroundColor = generateColor();
+            e.target.style.filter = darken(e.target);
         }
     });
 });
@@ -77,4 +79,16 @@ function generateColor()
 function randomRGB()
 {
     return Math.floor(Math.random()*255);
+}
+
+function darken(target)
+{
+    let value = target.getAttribute('value')
+    if (value == '0')
+    {
+        return 'brightness(0)';
+    }
+    value = value - 0.1;
+    target.setAttribute('value', `${value}`);
+    return `brightness(${value})`;
 }
